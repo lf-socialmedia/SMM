@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Life Force Homeopathy | Book a Consultation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; scroll-behavior: smooth; margin: 0; padding: 0; }
+    html, body { height: 100%; font-family: 'Inter', sans-serif; background: linear-gradient(135deg,#f9f5ef 0%,#ffffff 100%) fixed; color: #333; line-height: 1.6; cursor: none; }
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+    main { flex: 1 0 auto; }
+    header { background: #ffffff; text-align: left; padding: 20px; animation: fadeInDown 0.8s ease-in-out; }
+    header img { max-height: 60px; }
+    .hero { background: linear-gradient(120deg,rgba(238,154,27,0.8),rgba(255,255,255,0.8)), url('https://via.placeholder.com/1200x400?text=Clinic+Background') center/cover no-repeat; text-align: center; padding: 80px 20px; color: #8c451b; animation: backgroundShift 20s ease infinite alternate; }
+    .hero h1 { font-size: 36px; margin-bottom: 15px; animation: fadeInUpScale 1s ease; }
+    .hero p { color: black; font-size: 20px; animation: fadeInUpScale 1.3s Appoitmnet ease; }
+    .section { padding: 60px 20px; position: relative; background: #fff; opacity: 0; }
+    .section:nth-child(even) { background-color: #f9f5ef; }
+    .section::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); height: 2px; width: 80px; background: #ee9a1b; }
+    .section h2 { text-align: center; font-size: 30px; margin-bottom: 40px; color: #8c451b; }
+    /* .form-container { background: #fff; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin: 20px auto; max-width: 600px; width: 90%; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .form-container:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
+    .form-container input,.form-container button,.form-container select { width: 100%; padding: 14px; margin: 10px 0; border-radius: 8px; border: 1px solid #ccc; font-size: 16px; }
+    .form-container button { background: #ee9a1b; border: none; color: #000; font-weight: bold; cursor: pointer; transition: background 0.3s ease; }
+    .form-container button:hover { background: #d48414; } */
+
+.form-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px;
+  gap: 20px;
+}
+
+.doctor-info {
+  width: 40%;
+  max-width: 400px;
+}
+
+.doctor-info img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.doctor-info h2 {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.doctor-info p {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #444;
+}
+
+.form-wrapper {
+  width: 60%;
+  max-width: 600px;
+  margin-right: 5px; /* Only 5px gap from right edge */
+}
+
+.form-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.form-container input,
+.form-container button,
+.form-container select {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.form-container button {
+  background: #ee9a1b;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-container button:hover {
+  background: #d48414;
+}
+
+.phone-otp-group {
+  display: flex;
+  gap: 10px;
+}
+.phone-otp-group input {
+  flex: 2;
+}
+
+.phone-otp-group button {
+  flex: 1;
+  padding: 14px;
+  font-weight: bold;
+  background-color: #ee9a1b;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.phone-otp-group button:hover {
+  background-color: #d48414;
+}
+
+
+    .phone-otp-group { display: flex; gap: 10px; }
+    .phone-otp-group input { flex: 2; }
+    .phone-otp-group button { flex: 1; }
+    .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .carousel { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 10px 0; }
+    .carousel .card { flex: 0 0 auto; min-width: 250px; scroll-snap-align: start; }
+    .card { background: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.06); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s; }
+    .card:hover { transform: translateY(-12px) scale(1.03); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
+    .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; }
+    iframe { width: 100%; height: 220px; border: none; border-radius: 10px; }
+    .sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #8c451b; /* var(--secondary) */
+  color: #fff;
+  text-align: center;
+  padding: 15px 20px;
+  z-index: 1000;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.sticky-cta.visible {
+  transform: translateY(0);
+}
+
+.sticky-cta p {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.sticky-cta button {
+  background: #ee9a1b; /* var(--primary) */
+  border: none;
+  color: #000;
+  font-weight: 600;
+  padding: 10px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sticky-cta button:hover {
+  background: #d48414; /* var(--primary-dark) */
+  transform: scale(1.05);
+}
+
+    .whatsapp-bubble {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+    .whatsapp-bubble:hover { transform: scale(1.1); }
+    @keyframes fadeInUpScale { from { opacity: 0; transform: translateY(30px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes backgroundShift { 0% { background-position: center top; } 100% { background-position: center bottom; } }
+    footer { height: 100px; background: #eee; margin-top: 40px; flex-shrink: 0; }
+    .cursor { position: fixed; top: 0; left: 0; width: 15px; height: 15px; border-radius: 50%; background: #ee9a1b; pointer-events: none; transform: translate(-50%, -50%); transition: transform 0.1s ease; z-index: 9999; }
+
+
+
+ .grid {
+      display: grid; gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .card {
+      background: #fff; border: 1px solid #ddd;
+      border-radius: 8px; padding: 20px; text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .icon { font-size: 36px; color: #ee9a1b; margin-bottom: 10px; }
+
+    .carousel {
+      display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 10px;
+    }
+    .carousel .card {
+      min-width: 250px; flex: 0 0 auto; scroll-snap-align: start;
+    }
+
+    iframe { width: 100%; height: 200px; border: none; border-radius: 8px; }
+
+  .feature-box {
+  min-width: 220px;
+  flex: 1;
+}
+
+.counter,
+.plus {
+  font-size: 52px;
+  font-weight: bold;
+  color: #ee9a1b;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.label {
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Make sure all features stay in one row on larger screens */
+@media (max-width: 992px) {
+  section div {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  .feature-box {
+    margin-bottom: 30px;
+  }
+}
+
+.faq-section h2 {
+  text-align: center;
+  color: #8c451b;
+  margin-bottom: 30px;
+}
+
+.faq-section h2 {
+  text-align: center;
+  color: #8c451b;
+  margin-bottom: 30px;
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faq-card {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  background: #ee9a1b;
+  color: #000;
+  padding: 16px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+}
+
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 20px;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.faq-card.open .faq-question::after {
+  content: '-';
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  background: #9ea4a8;
+  color: #fff;
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, padding 0.3s ease;
+}
+
+.faq-card.open .faq-answer {
+  padding: 16px 20px;
+  max-height: 500px; /* enough to accommodate large answer */
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #fff;
+  border-bottom: 2px solid #ee9a1b;
+  flex-wrap: wrap;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #fff;
+  border-bottom: 2px solid #ee9a1b;
+  flex-wrap: wrap;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+.header-right {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  color: #000;
+}
+
+.icon-box {
+  min-width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ee9a1b;
+}
+
+/* 🔧 Custom size and angle for CALL icon */
+.call-icon i {
+  font-size: 40px;
+  transform: scaleX(-1) rotate(18deg);
+}
+
+/* 💬 Custom size for WHATSAPP icon */
+.whatsapp-icon i {
+  font-size: 42px;
+}
+
+.contact-text {
+  line-height: 1.8;
+}
+.icon-box i.fa-phone-alt {
+  transform: scaleX(-1) rotate(-20deg); /* Flip + tilt upwards slightly */
+}
+
+.contact-text .label,
+.contact-text .number {
+  font-weight: bold;
+  font-size: 15px;
+  color: #000;
+}
+
+/* Remove underline on hover */
+.contact-item:hover .number,
+.contact-item:hover .label {
+  text-decoration: none;
+}
+
+/* Shared base styles */
+.form-container {
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Styles for Consultation Form */
+.consultation-form {
+  background: #fff;
+  padding: 30px;
+}
+
+.consultation-form:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.consultation-form input,
+.consultation-form button,
+.consultation-form select {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* Styles for Diet Chart Form */
+.diet-chart-form {
+  background: #f5f5f5;
+  padding: 25px;
+}
+
+.diet-chart-form input,
+.diet-chart-form button,
+.diet-chart-form select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  font-size: 15px;
+}
+
+.diet-chart-form button {
+  background: #ee9a1b;
+  color: #fff;
+  font-weight: bold;
+}
+
+.diet-chart-form button:hover {
+  background: #703610;
+}
+.hero {
+  background: linear-gradient(120deg, rgba(238, 154, 27, 0.85), rgba(255, 255, 255, 0.9)), 
+              url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+  padding: 60px 5%;
+  text-align: center;
+  color: #8c451b;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.hero-cta {
+  display: inline-block;
+  background: #ee9a1b;
+  color: #000;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+.form-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px 5%;
+  background: #f9f5ef;
+}
+
+.doctor-info {
+  flex: 1;
+  max-width: 450px;
+}
+
+.doctor-info img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.doctor-info h2 {
+  margin-top: 10px;
+  font-size: 1.8rem;
+  color: #8c451b;
+  
+}
+.doctor-info h2,
+.doctor-info p {
+  line-height: 1; /* or try 1.2 for even tighter spacing */
+}
+
+
+.highlight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+
+.highlight i {
+  color: #ee9a1b;
+}
+
+.form-wrapper {
+  flex: 1;
+  max-width: 850px;
+}
+
+.form-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.form-container h2 {
+  text-align: center;
+  color: #8c451b;
+}
+
+.form-container input,
+.form-container button {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.form-container button {
+  background: #ee9a1b;
+  border: none;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+
+  </style>
+</head>
+<body>
+<main>
+<!-- Font Awesome CDN -->
+<!-- Font Awesome CDN -->
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<header class="site-header">
+  <div class="header-left">
+   <img src="https://i.ibb.co/pjxZLh84/LF-Logo-for-web.png" alt="Life Force Logo" border="0">
+  </div>
+  <div class="header-right">
+   <a href="tel:+912266888888" class="contact-item">
+  <div class="icon-box call-icon">
+    <i class="fas fa-phone-alt"></i>
+  </div>
+  <div class="contact-text">
+    <div class="label">Call us today</div>
+    <div class="number">+91-22-66888888</div>
+  </div>
+</a>
+
+<!-- WhatsApp Section -->
+<a href="https://wa.me/+917208001138" target="_blank" class="contact-item">
+  <div class="icon-box whatsapp-icon">
+    <i class="fab fa-whatsapp"></i>
+  </div>
+  <div class="contact-text">
+    <div class="label">WhatsApp</div>
+    <div class="number">+91-72080 01138</div>
+  </div>
+</a>
+  </div>
+</header>
+
+
+
+  <!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Safe, Research-Based Homeopathy from India’s Most Trusted Clinic</h1>
+    <p>Effective treatment for chronic conditions without side effects</p>
+    <a href="#consultation-form" class="hero-cta">Book Your Consultation</a>
+  </div>
+</section>
+
+<section class="form-section" style="display: flex; flex-wrap: wrap; padding: 60px 5%; gap: 40px; background-color: #f9f5ef;">
+  <!-- LEFT SIDE: QUOTE BOX -->
+  <div style="flex: 1; min-width: 300px; display: flex; align-items: stretch;">
+    <div style="background-color: #fffaf3; padding: 50px 40px; border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); display: flex; flex-direction: column; justify-content: space-between; width: 100%;">
+      
+      <blockquote style="font-size: 1.8rem; font-weight: 700; line-height: 1.4; color: #333; margin-bottom: 30px; text-align: center;">
+        “Homeopathy has become more scientific in the last two decades. Research-based homeopathy offers more effective treatment for many chronic and recurring diseases.”
+      </blockquote>
+
+         <!-- DR INFO WITH CONTROLLABLE X POSITION -->
+      <div style="display: flex; align-items: center; gap: 25px; justify-content: center; transform: translateX(0px);" id="dr-info-block">
+        <img src="https://i.ibb.co/LXvBCVfh/Dr-Rajesh-Shah.webp" alt="Dr Rajesh Shah" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+        <div>
+          <div style="font-weight: 1000; font-size: 24px; color: #8c451b; text-shadow: 1px 1px 1px #ccc;">
+            Dr. Rajesh Shah, MD (Hom)
+          </div>
+          
+
+          <div style="font-size: 16px; color: #444;">
+            Researcher, Founder, Life Force Homeopathy<br>
+            40+ Years of Experience in Homeopathy<br>
+            Treated Patients from 180+ Countries<br>
+            Globally Recognized Homeopathy Expert
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- RIGHT SIDE: FORM -->
+  <div style="flex: 1; min-width: 300px; display: flex; align-items: stretch;">
+    <div class="form-container" id="consultation-form" style="background-color: #fff; padding: 40px; border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); width: 100%; display: flex; flex-direction: column; justify-content: center;">
+      <h2>Get free guidance from our doctors</h2>
+      <p style="text-align: center; margin-bottom: 20px; color: var(--gray);">Fill the form and our team will contact you</p>
+      <form>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="text" placeholder="City" required>
+
+        <div class="phone-otp-group">
+          <input type="tel" placeholder="Phone Number" required>
+          <button type="button">Send OTP</button>
+        </div>
+
+        <input type="text" placeholder="Enter OTP" required>
+        <button type="submit">Request a Call Back</button>
+      </form>
+      <p class="form-note">We respect your privacy. Your information is secure with us.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="feature-section" style="padding: 1px 0; background: transparent;">
+
+
+<section style="padding: 60px 0; background: transparent;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: nowrap; text-align: center; max-width: 1200px; margin: auto; gap: 40px;">
+
+    <div class="feature-box">
+      <div><span class="counter" data-target="40">0</span><span class="plus" style="display:none;">+</span></div>
+      <div class="label">Years of Experience</div>
+    </div>
+
+    <div class="feature-box">
+      <div><span class="counter" data-target="100000">0</span><span class="plus" style="display:none;">+</span></div>
+      <div class="label">Patients Treated Worldwide</div>
+    </div>
+
+    <div class="feature-box">
+      <div><span class="counter" data-target="180">0</span><span class="plus" style="display:none;">+</span></div>
+      <div class="label">Countries Reached</div>
+    </div>
+
+    <div class="feature-box">
+      <div><span class="counter" data-target="30">0</span><span class="plus" style="display:none;">+</span></div>
+      <div class="label">BHMS and MD Homeopaths</div>
+    </div>
+
+  </div>
+</section>
+</section>
+
+
+  <!-- <section class="section">
+    <h2>Awards & Recognitions</h2>
+    <div class="carousel">
+      <div class="card"><img src="https://via.placeholder.com/300x150?text=Award+1"><p>Times Healthcare Award</p></div>
+      <div class="card"><img src="https://via.placeholder.com/300x150?text=Award+2"><p>India Book of Records</p></div>
+      <div class="card"><img src="https://via.placeholder.com/300x150?text=Award+3"><p>Best Homeopathy Clinic</p></div>
+      <div class="card"><img src="https://via.placeholder.com/300x150?text=Award+4"><p>Excellence in Research</p></div>
+      <div class="card"><img src="https://via.placeholder.com/300x150?text=Award+5"><p>National Award</p></div>
+      <div class="card"><img src="https://via.placeholder.com/300x150?text=Award+6"><p>Global Recognition</p></div>
+    </div>
+  </section>
+    <section class="section">
+    <h2>Media Recognition</h2>
+    <div class="carousel">
+      <div class="card"><img src="https://via.placeholder.com/300x150?text=NDTV"><p>NDTV Health Interview</p></div>
+      <div class="card"><img src="https://via.placeholder.com/300x150?text=Times+Now"><p>Featured on Times Now</p></div>
+      <div class="card"><img src="https://via.placeholder.com/300x150?text=BBC"><p>BBC Health Story</p></div>
+      <div class="card"><img src="https://via.placeholder.com/300x150?text=Zee+News"><p>Zee News Feature</p></div>
+      <div class="card"><img src="https://via.placeholder.com/300x150?text=India+Today"><p>India Today Report</p></div>
+      <div class="card"><img src="https://via.placeholder.com/300x150?text=Outlook"><p>Outlook Magazine</p></div>
+    </div>
+  </section> -->
+
+   <section>
+
+  <section class="section">
+    <h2>Conditions We Treat</h2>
+    <div class="grid">
+      <div class="card"><img src="https://i.ibb.co/pv7fnf9m/Alopecia-areata.webp"><p>Alopecia Areata</p></div>
+  <div class="card"><img src="https://i.ibb.co/fVWH9ZMB/Ankylosing-spondylitis.webp"><p>Ankylosing Spondylitis</p></div>
+  <div class="card"><img src="https://i.ibb.co/d0TrN4pB/Anxiety-neurosis.webp"><p>Anxiety Neurosis</p></div>
+  <div class="card"><img src="https://i.ibb.co/pv4shLMd/Asthma.webp"><p>Asthma</p></div>
+  <div class="card"><img src="https://i.ibb.co/RTH7RvJb/Chalazion.webp"><p>Chalazion</p></div>
+  <div class="card"><img src="https://i.ibb.co/4wRhM8pq/Child-Asthma.webp"><p>Child Asthma</p></div>
+  <div class="card"><img src="https://i.ibb.co/VWpRmdfY/Cervical-Spondylitis.webp"><p>Cervical Spondylitis</p></div>
+  <div class="card"><img src="https://i.ibb.co/PZk156M5/Eczema.webp"><p>Eczema</p></div>
+  <div class="card"><img src="https://i.ibb.co/39L9Xq7j/Fissure-In-Ano.webp"><p>Fissure In Ano</p></div>
+  <div class="card"><img src="https://i.ibb.co/k68cfCHL/Frequent-colds.webp"><p>Frequent Colds</p></div>
+  <div class="card"><img src="https://i.ibb.co/CpnB6N9B/GERD.webp"><p>GERD</p></div>
+  <div class="card"><img src="https://i.ibb.co/1N5MtQd/Hair-Fall.webp"><p>Hair Fall</p></div>
+  <div class="card"><img src="https://i.ibb.co/dJbKbjFw/Hepatitis-C.webp"><p>Hepatitis C</p></div>
+  <div class="card"><img src="https://i.ibb.co/tMTsLHqd/Irritable-Bowl-Syndrome.webp"><p>Irritable Bowel Syndrome</p></div>
+  <div class="card"><img src="https://i.ibb.co/hTGPpKd/Lichen-Planus.webp"><p>Lichen Planus</p></div>
+  <div class="card"><img src="https://i.ibb.co/4nD85vJv/Migraine.webp"><p>Migraine</p></div>
+  <div class="card"><img src="https://i.ibb.co/hJp1Tp0H/Nephrotic-Syndrome.webp"><p>Nephrotic Syndrome</p></div>
+  <div class="card"><img src="https://i.ibb.co/LzMbgptx/Protatitis.webp"><p>Prostatitis</p></div>
+  <div class="card"><img src="https://i.ibb.co/cXhrXzbv/Psoriasis-arthritis.webp"><p>Psoriatic Arthritis</p></div>
+  <div class="card"><img src="https://i.ibb.co/vxXN5r6D/Psoriasis.webp"><p>Psoriasis</p></div>
+  <div class="card"><img src="https://i.ibb.co/TxrGbNgh/Sleeplessness.webp"><p>Sleeplessness</p></div>
+  <div class="card"><img src="https://i.ibb.co/DHvrd2Z4/Tonsillitis.webp"><p>Tonsillitis</p></div>
+  <div class="card"><img src="https://i.ibb.co/rGMjsV1L/Trigeminal-Neuralgia-1.webp"><p>Trigeminal Neuralgia</p></div>
+  <div class="card"><img src="https://i.ibb.co/VW6t1n14/Ulcerative-Colitis.webp"><p>Ulcerative Colitis</p></div>
+  <div class="card"><img src="https://i.ibb.co/h1Ch3bKF/Underactive-Thyroid.webp"><p>Underactive Thyroid</p></div>
+  <div class="card"><img src="https://i.ibb.co/FqctnrbD/Urticaria.webp"><p>Urticaria</p></div>
+  <div class="card"><img src="https://i.ibb.co/V0J39m7f/Vitiligo.webp"><p>Vitiligo</p></div>
+</div>
+    </div>
+  </section>
+  </section>
+
+<section class="section">
+  <h2>Why Choose Life Force?</h2>
+  <div class="grid">
+    <div class="card"><i class="fas fa-award icon"></i><p>40+ Years of Experience</p></div>
+    <div class="card"><i class="fas fa-globe icon"></i><p>Treated Patients in 180+ Countries</p></div>
+    <div class="card"><i class="fas fa-hospital-user icon"></i><p>Online & In-Clinic Consultations</p></div>
+    <div class="card"><i class="fas fa-child icon"></i><p>Safe for All Ages</p></div>
+    <div class="card"><i class="fas fa-flask icon"></i><p>Research-Based Treatment</p></div>
+  </div>
+</section>
+
+  <section class="section">
+    <h2>Meet Our Expert Doctors</h2>
+    <div class="carousel">
+      <div class="card"><img src="https://i.ibb.co/NgYtq87K/Dr-Amruta-Utekar.webp"><p><strong>Dr. Amruta Utekar, BHMS</strong><br>Asso. to Dr Rajesh Shah<br>15 Years Experinece</p></div>
+      <div class="card"><img src="https://i.ibb.co/prL18jbv/Dr-Neetu-Jethwani.webp"><p><strong>Dr. Neetu Jethvani, BHMS</strong><br>Asso. to Dr Rajesh Shah<br>20 Years Experinece</p></div>
+       <div class="card"><img src="https://i.ibb.co/Kxb7Qtyn/Dr-Kainaz-Bollore.webp"><p><strong>Dr. Kainaz Bilimoria, BHMS</strong><br>Asso. to Dr Rajesh Shah<br>15 Years Experinece</p></div>
+      <div class="card"><img src="https://i.ibb.co/0yCyD8Js/Dr-Satish-Rao.webp"><p><strong>Dr. Satish Rao, MD</strong><br>Asso. to Dr Rajesh Shah<br>13 Years Experinece</p></div>
+      <div class="card"><img src="https://i.ibb.co/rR3pnMrG/Dr-Ramesh-Yadav.webp"><p><strong>Dr. Ramesh Yadav, BHMS</strong><br>Asso. to Dr Rajesh Shah<br>28 Years Experinece</p></div>
+      <div class="card"><img src="https://i.ibb.co/57sxPcG/Pooja-Kamat.webp"><p><strong>Dr. Pooja Kamat, BHMS</strong><br>Asso. to Dr Rajesh Shah<br>8 Years Experinece</p></div>
+      <div class="card"><img src="https://i.ibb.co/jvJJwZv9/Dr-Satish-Kore.webp"><p><strong>Dr. Satish Kore</strong><br>Asso. to Dr Rajesh Shah<br>10 Years Experinece</p></div>
+     
+      
+      
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Patient Testimonials</h2>
+    <div class="grid">
+      <iframe src="https://www.youtube.com/embed/LEs240283zY" title="Patient Story 1"></iframe>
+      <iframe src="https://www.youtube.com/embed/brlAVAr9aCM" title="Patient Story 2"></iframe>
+      <iframe src="https://www.youtube.com/embed/OdpxdQgSvuE" title="Patient Story 3"></iframe>
+      <iframe src="https://www.youtube.com/embed/DWm563WnnQg" title="Patient Story 4"></iframe>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Google Reviews</h2>
+   <div class='sk-ww-google-reviews' data-embed-id='25579684'></div><script src='https://widgets.sociablekit.com/google-reviews/widget.js' defer></script>
+ <br>
+    <h2>Prognosis and Scope Of Treatemnet Your Diaseses using Homeopathy</h2>
+<br>
+<div class='sk-ww-youtube-playlist-videos' data-embed-id='25579717'></div><script src='https://widgets.sociablekit.com/youtube-playlist-videos/widget.js' defer></script>
+ </section>
+ 
+
+ <section class="section">
+<h2 style="text-align: left;">Download Free Diet Chart For Your Disease</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between; align-items: flex-start;">
+    
+    <!-- Form Section -->
+    <form class="form-container diet-chart-form" style="flex: 1; min-width: 320px; max-width: 48%;">
+      <select required>
+        <option value="">Select Condition</option>
+        <option>Psoriasis</option>
+        <option>Vitiligo</option>
+        <option>Migraine</option>
+      </select>
+      <div class="phone-otp-group">
+        <input type="tel" placeholder="Phone Number" required>
+        <button type="button">Send OTP</button>
+      </div>
+      <input type="text" placeholder="Enter OTP" required>
+      <button type="submit">Download Diet Chart</button>
+    </form>
+
+    <!-- Responsive YouTube Video -->
+    <div style="flex: 1; min-width: 320px; max-width: 48%;">
+      <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <iframe src="https://www.youtube.com/embed/AC131D_tbGk"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                title="Diet Tips Video">
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <section class="section faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-container">
+    <div class="faq-card">
+      <div class="faq-question">1. How is Life Force homeopathy different from other treatments?</div>
+      <div class="faq-answer">At Life Force, our homeopathic treatments are research-driven, personalized, and designed to treat the root cause of your chronic disease. With over 40 years of experience and patients in 180+ countries, our approach combines clinical expertise with scientific innovation.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-question">2. Is homeopathy safe for long-term use?</div>
+      <div class="faq-answer">Yes, absolutely. Our homeopathic medicines are made from natural substances, are non-toxic, and free from side effects, making them safe even for children, elderly patients, and pregnant women.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-question">3. Can I take homeopathy along with my current allopathic treatment?</div>
+      <div class="faq-answer">Yes, in most cases, homeopathy can be safely taken alongside conventional treatments. Our doctors will guide you based on your medical history and current medications.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-question">4. How long does homeopathic treatment take to show results?</div>
+      <div class="faq-answer">It depends on the type and duration of your disease, but many patients start noticing improvements within a few weeks. Chronic conditions may take a few months, but the improvement is deeper, long-lasting, and holistic.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-question">5. Will I need to visit the clinic for treatment?</div>
+      <div class="faq-answer">You can choose what’s best for you. You’re welcome to visit our clinic if you prefer face-to-face consultation. But if you live far away, you can take treatment online. We treat patients from all over the world and send medicines to your home. The treatment is the same, whether you visit us or consult online.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-question">6. Are the results of homeopathy permanent?</div>
+      <div class="faq-answer">When treated correctly and consistently, homeopathy offers long-lasting or even permanent relief by addressing the underlying causes rather than suppressing symptoms.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-question">7. How do I start my treatment with Life Force?</div>
+      <div class="faq-answer">You can:<br>• Take our free online curability test<br>• Fill out the consultation form<br>• Or Call/WhatsApp us directly for a quick response</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-question">8. What is the cost of treatment at Life Force?</div>
+      <div class="faq-answer">The cost depends on the chronicity and complexity of your condition, and the duration of treatment needed. After reviewing your case, our doctors will recommend a suitable plan. We offer flexible treatment options to make it affordable for patients worldwide.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-question">9. Are the consultation and medicines included in the fees?</div>
+      <div class="faq-answer">Yes. Our treatment packages generally include online consultation, case evaluation, customized homeopathic medicines, and ongoing support. International patients also benefit from doorstep delivery of medicines. All charges are shared transparently before you begin.</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer style="text-align: center; padding: 10px;">
+  <p>© 2025 All rights reserved to Life Force Homeopathy. <br><br><br><br><br><br>
+</footer>
+
+<!-- Sticky CTA -->
+<div class="sticky-cta">
+  <p>Ready to start your treatment?</p>
+  <a href="#consultation-form" class="hero-cta">Book Your Consultation</a>
+  </button>
+</div>
+
+<a href="https://wa.me/+917208001138" class="whatsapp-bubble"><i class="fab fa-whatsapp"></i></a>
+
+<div class="cursor"></div>
+
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = 'fadeInUpScale 1s ease forwards';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  sections.forEach(section => observer.observe(section));
+  const cursor = document.querySelector('.cursor');
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+  });
+</script>
+
+
+<script>
+function animateCountersOnce() {
+  const counters = document.querySelectorAll('.counter');
+
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    const plus = counter.nextElementSibling;
+    
+    let count = 0;
+    const speed = 50; // lower is faster
+    const step = Math.ceil(target / 100);
+
+    const update = () => {
+      count += step;
+      if (count >= target) {
+        counter.textContent = target.toLocaleString();
+        plus.style.display = 'inline';
+        clearInterval(timer);
+      } else {
+        counter.textContent = count.toLocaleString();
+      }
+    };
+
+    const timer = setInterval(update, speed);
+  });
+}
+
+function isInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top <= window.innerHeight &&
+    rect.bottom >= 0
+  );
+}
+
+let hasAnimated = false;
+
+window.addEventListener('scroll', () => {
+  const section = document.getElementById('feature-section');
+  if (!hasAnimated && isInViewport(section)) {
+    hasAnimated = true;
+    animateCountersOnce();
+  }
+});
+</script>
+
+<script>
+// Show sticky CTA when user scrolls 500px down
+window.addEventListener('scroll', function() {
+  const stickyCta = document.querySelector('.sticky-cta');
+  if (window.scrollY > 1000) {
+    stickyCta.classList.add('visible');
+  } else {
+    stickyCta.classList.remove('visible');
+  }
+});
+</script>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach((question) => {
+    question.addEventListener('click', () => {
+      const card = question.closest('.faq-card');
+      card.classList.toggle('open');
+    });
+  });
+</script>
+
+
+
+
+
+
+</body>
+</html>
+
+
