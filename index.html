@@ -17,7 +17,7 @@
     .hero h1 { font-size: 36px; margin-bottom: 15px; animation: fadeInUpScale 1s ease; }
     .hero p { color: black; font-size: 20px; animation: fadeInUpScale 1.3s Appoitmnet ease; }
     .section { padding: 60px 20px; position: relative; background: #fff; opacity: 0; }
-    .section:nth-child(even) { background-color: #f9f5ef; }
+    .section:nth-child(even) { background-color: #ffffff; }
     .section::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); height: 2px; width: 80px; background: #ee9a1b; }
     .section h2 { text-align: center; font-size: 30px; margin-bottom: 40px; color: #8c451b; }
     /* .form-container { background: #fff; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin: 20px auto; max-width: 600px; width: 90%; transition: transform 0.3s ease, box-shadow 0.3s ease; }
@@ -615,45 +615,60 @@
   </div>
 </section>
 
-<!-- Doctor + Form Section -->
-<section class="form-section">
-  <div class="container" style="display: flex; width: 100%; gap: 40px;">
-    <div class="doctor-info">
-      <img src="https://i.ibb.co/LXvBCVfh/Dr-Rajesh-Shah.webp" alt="Dr Rajesh Shah">
-      <h2>Dr. Rajesh Shah, MD (Hom)</h2>
-      <p><strong>Founder, Life Force Homeopathy</strong></p>
-      <div class="doctor-highlights">
-        <div class="highlight"><i class="fas fa-check-circle"></i><p>40+ Years of Experience in Homeopathy</p></div>
-        <div class="highlight"><i class="fas fa-check-circle"></i><p>Patients from 180+ Countries</p></div>
-        <div class="highlight"><i class="fas fa-check-circle"></i><p>Globally Recognized Homeopathy Expert</p></div>
-        <div class="highlight"><i class="fas fa-check-circle"></i><p>Research-Based Treatment Protocols</p></div>
-      </div>
-    </div>
-    <div class="form-wrapper">
-      <div class="form-container" id="consultation-form">
-        <h2>Book Your Consultation</h2>
-        <p style="text-align: center; margin-bottom: 20px; color: var(--gray);">
-          Fill the form and our team will contact you
-        </p>
-        <form>
-  <input type="text" placeholder="Full Name" required>
-  <input type="email" placeholder="Email Address" required>
-  <input type="text" placeholder="City" required>
+<section class="form-section" style="display: flex; flex-wrap: wrap; padding: 60px 5%; gap: 40px; background-color: #f9f5ef;">
+  <!-- LEFT SIDE: QUOTE BOX -->
+  <div style="flex: 1; min-width: 300px; display: flex; align-items: stretch;">
+    <div style="background-color: #fffaf3; padding: 50px 40px; border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); display: flex; flex-direction: column; justify-content: space-between; width: 100%;">
+      
+      <blockquote style="font-size: 1.8rem; font-weight: 700; line-height: 1.4; color: #333; margin-bottom: 30px; text-align: center;">
+        “Homeopathy has become more scientific in the last two decades. Research-based homeopathy offers more effective treatment for many chronic and recurring diseases.”
+      </blockquote>
 
-  <div class="phone-otp-group">
-    <input type="tel" placeholder="Phone Number" required>
-    <button type="button">Send OTP</button>
+         <!-- DR INFO WITH CONTROLLABLE X POSITION -->
+      <div style="display: flex; align-items: center; gap: 25px; justify-content: center; transform: translateX(0px);" id="dr-info-block">
+        <img src="https://i.ibb.co/LXvBCVfh/Dr-Rajesh-Shah.webp" alt="Dr Rajesh Shah" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+        <div>
+          <div style="font-weight: 1000; font-size: 24px; color: #8c451b; text-shadow: 1px 1px 1px #ccc;">
+            Dr. Rajesh Shah, MD (Hom)
+          </div>
+          
+
+          <div style="font-size: 16px; color: #444;">
+            Researcher, Founder, Life Force Homeopathy<br>
+            40+ Years of Experience in Homeopathy<br>
+            Treated Patients from 180+ Countries<br>
+            Globally Recognized Homeopathy Expert
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
-  <input type="text" placeholder="Enter OTP" required>
 
-  <button type="submit">Request a Call Back</button>
-</form>
-        <p class="form-note">We respect your privacy. Your information is secure with us.</p>
-      </div>
+  <!-- RIGHT SIDE: FORM -->
+  <div style="flex: 1; min-width: 300px; display: flex; align-items: stretch;">
+    <div class="form-container" id="consultation-form" style="background-color: #fff; padding: 40px; border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); width: 100%; display: flex; flex-direction: column; justify-content: center;">
+      <h2>Get free guidance from our doctors</h2>
+      <p style="text-align: center; margin-bottom: 20px; color: var(--gray);">Fill the form and our team will contact you</p>
+      <form>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="text" placeholder="City" required>
+
+        <div class="phone-otp-group">
+          <input type="tel" placeholder="Phone Number" required>
+          <button type="button">Send OTP</button>
+        </div>
+
+        <input type="text" placeholder="Enter OTP" required>
+        <button type="submit">Request a Call Back</button>
+      </form>
+      <p class="form-note">We respect your privacy. Your information is secure with us.</p>
     </div>
   </div>
 </section>
+
 
 
 <section id="feature-section" style="padding: 1px 0; background: transparent;">
@@ -785,15 +800,18 @@
     </div>
   </section>
 
-  <section class="section">
-    <h2>Google Reviews</h2>
-   <div class='sk-ww-google-reviews' data-embed-id='25579684'></div><script src='https://widgets.sociablekit.com/google-reviews/widget.js' defer></script>
- <br>
-    <h2>Prognosis and Scope Of Treatemnet Your Diaseses using Homeopathy</h2>
-<br>
-<div class='sk-ww-youtube-playlist-videos' data-embed-id='25579717'></div><script src='https://widgets.sociablekit.com/youtube-playlist-videos/widget.js' defer></script>
- </section>
- 
+   <section class="section">
+
+    <!-- Elfsight Google Reviews | Life Force Chembur -->
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<div class="elfsight-app-f886139e-3bce-41c6-96b5-91b0b798ccb8" data-elfsight-app-lazy></div>
+  
+    <h2>Prognosis Videos: Scope of Treatmnet using Homeopathy</h2>
+<!-- Elfsight YouTube Gallery | Prognosis -->
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<div class="elfsight-app-a6e3841d-4c7e-4660-b552-fe3a9514d7ac" data-elfsight-app-lazy></div>
+
+</section>
 
  <section class="section">
 <h2 style="text-align: left;">Download Free Diet Chart For Your Disease</h2>
@@ -877,14 +895,13 @@
 </main>
 
 <footer style="text-align: center; padding: 10px;">
-  <p>© 2025 All rights reserved to Life Force Homeopathy. <br> 1 <br> 2 <br>3 <br> 1</p>
+  <p>© 2025 All rights reserved to Life Force Homeopathy. <br><br><br><br><br><br>
 </footer>
 
 <!-- Sticky CTA -->
 <div class="sticky-cta">
   <p>Ready to start your treatment?</p>
-  <button onclick="document.getElementById('consultation-form').scrollIntoView({ behavior: 'smooth', block: 'center' })">
-    Book Consultation Now
+  <a href="#consultation-form" class="hero-cta">Book Your Consultation</a>
   </button>
 </div>
 
