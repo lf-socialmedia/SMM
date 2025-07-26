@@ -567,6 +567,111 @@
 
 
 
+/* 🔹 YouTube Carousel Styles */
+/* Section container */
+.yt-section {
+  padding: 30px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+  border-radius: 10px;
+}
+
+/* Header: Title + Search Input */
+.yt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.yt-header h2 {
+  font-size: 24px;
+  color: #222;
+  flex: 1 1 60%;
+}
+
+#videoSearch {
+  padding: 10px 15px;
+  font-size: 15px;
+  width: 250px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+#videoSearch:focus {
+  border-color: #0d6efd;
+}
+
+/* Carousel Grid */
+.video-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+/* Hide scrollbars */
+.video-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Video Cards */
+.video-card {
+  min-width: 300px;
+  max-width: 300px;
+  flex: 0 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  background: white;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.video-card iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+}
+
+.video-title {
+  font-weight: 600;
+  padding: 10px 12px;
+  font-size: 15px;
+}
+
+/* Carousel Controls */
+.carousel-controls {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.carousel-controls button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.carousel-controls button:hover {
+  background-color: #084dc2;
+}
+
+
   </style>
 </head>
 <body>
@@ -800,18 +905,29 @@
     </div>
   </section>
 
-   <section class="section">
 
-    <!-- Elfsight Google Reviews | Life Force Chembur -->
-<script src="https://static.elfsight.com/platform/platform.js" async></script>
-<div class="elfsight-app-f886139e-3bce-41c6-96b5-91b0b798ccb8" data-elfsight-app-lazy></div>
-  
-    <h2>Prognosis Videos: Scope of Treatmnet using Homeopathy</h2>
-<!-- Elfsight YouTube Gallery | Prognosis -->
-<script src="https://static.elfsight.com/platform/platform.js" async></script>
-<div class="elfsight-app-a6e3841d-4c7e-4660-b552-fe3a9514d7ac" data-elfsight-app-lazy></div>
+  <!-- 🔹 YouTube Carousel Section Start -->
+<section class="yt-section">
+  <div class="yt-header">
+    <h2>Prognosis Videos: Scope of Treatment using Homeopathy</h2>
+    <input
+      type="text"
+      id="videoSearch"
+      placeholder="Search videos..."
+      oninput="filterVideos()"
+    />
+  </div>
 
+  <div class="carousel-wrapper">
+    <div id="youtube-carousel" class="video-carousel"></div>
+  </div>
+
+  <div class="carousel-controls">
+    <button onclick="scrollCarousel('prev')">⏮️ Prev</button>
+    <button onclick="scrollCarousel('next')">⏭️ Next</button>
+  </div>
 </section>
+
 
  <section class="section">
 <h2 style="text-align: left;">Download Free Diet Chart For Your Disease</h2>
@@ -992,6 +1108,63 @@ window.addEventListener('scroll', function() {
       const card = question.closest('.faq-card');
       card.classList.toggle('open');
     });
+  });
+</script>
+
+<script>
+  const apiKey = "AIzaSyD1pAvP4bfjuNQM7UIuftN35tE0Pdmqiwk";
+  const playlistId = "PL8Umd9NdcdvrrFtWYnocWHjQi_I0Dfj-I";
+  let allVideoCards = [];
+
+  async function fetchPlaylistVideos() {
+    const apiUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=${apiKey}`;
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+
+    return data.items.map(item => {
+      const snippet = item.snippet;
+      return {
+        title: snippet.title,
+        videoId: snippet.resourceId.videoId
+      };
+    });
+  }
+
+  function createVideoCard(video) {
+    const card = document.createElement("div");
+    card.className = "video-card";
+    card.innerHTML = `
+      <iframe 
+        src="https://www.youtube.com/embed/${video.videoId}?playsinline=1&rel=0&modestbranding=1"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <div class="video-title">${video.title}</div>
+    `;
+    return card;
+  }
+
+  function scrollCarousel(direction) {
+    const container = document.getElementById("youtube-carousel");
+    const scrollAmount = 320;
+    container.scrollBy({
+      left: direction === "next" ? scrollAmount : -scrollAmount,
+      behavior: "smooth"
+    });
+  }
+
+  function filterVideos() {
+    const searchTerm = document.getElementById("videoSearch").value.toLowerCase();
+    allVideoCards.forEach((card) => {
+      const title = card.querySelector(".video-title").textContent.toLowerCase();
+      card.style.display = title.includes(searchTerm) ? "block" : "none";
+    });
+  }
+
+  fetchPlaylistVideos().then((videos) => {
+    const container = document.getElementById("youtube-carousel");
+    allVideoCards = videos.map(video => createVideoCard(video));
+    allVideoCards.forEach(card => container.appendChild(card));
   });
 </script>
 
